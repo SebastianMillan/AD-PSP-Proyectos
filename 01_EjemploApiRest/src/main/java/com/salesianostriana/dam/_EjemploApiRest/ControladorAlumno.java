@@ -4,15 +4,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 public class ControladorAlumno {
+
     private final RepositorioAlumno repositorioAlumno;
 
     @GetMapping("/alumno/")
-    public List<Alumno> getAll(){
+    public List<Alumno> getAll() {
         return repositorioAlumno.findAll();
     }
 

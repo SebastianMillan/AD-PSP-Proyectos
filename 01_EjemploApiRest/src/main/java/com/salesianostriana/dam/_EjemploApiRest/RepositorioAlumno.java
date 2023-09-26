@@ -2,6 +2,7 @@ package com.salesianostriana.dam._EjemploApiRest;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +12,36 @@ public class RepositorioAlumno {
     private List<Alumno> alumnos;
 
     public RepositorioAlumno(){
+        alumnos = new ArrayList<>();
+        alumnos.add(
+                Alumno.builder()
+                        .id(1)
+                        .nombre("Pepe")
+                        .apellidos("Pérez Pérez")
+                        .edad(19)
+                        .email("pepe.perez@triana.salesianos.edu")
+                        .build()
+        );
 
+        alumnos.add(
+                Alumno.builder()
+                        .id(2)
+                        .nombre("Ana")
+                        .apellidos("López Muñoz")
+                        .edad(21)
+                        .email("ana.lopez@triana.salesianos.edu")
+                        .build()
+        );
+
+        alumnos.add(
+                Alumno.builder()
+                        .id(3)
+                        .nombre("Manuel")
+                        .apellidos("No Te Arrimes a la Pared")
+                        .edad(23)
+                        .email("manuel.note@triana.salesianos.edu")
+                        .build()
+        );
     }
 
     public List<Alumno> findAll(){
@@ -24,9 +54,9 @@ public class RepositorioAlumno {
     }
     public int indexOf(int id){
         int pos=-1;
-        for (int i = 0; i < alumnos.size() && pos != -1; i++) {
+        for (int i = 0; i < alumnos.size() && pos == -1; i++) {
             if(alumnos.get(i).getId()==id){
-                pos=1;
+                pos=i;
             }
         }
         return pos;
