@@ -14,13 +14,12 @@ public class MonumentoController {
     private final MonumentoRepository monumentoRepository;
 
     @GetMapping("/monumento/")
-    public ResponseEntity<Object> getAll(){
-        List<Monumento> resultado = monumentoRepository.findAll();
-
-        if(resultado.isEmpty())
+    public ResponseEntity<List<Monumento>> getAll(){
+        List<Monumento> lista = monumentoRepository.findAll();
+        if(lista.isEmpty())
             return ResponseEntity.notFound().build();
 
-        return ResponseEntity.ok(resultado);
+        return ResponseEntity.ok(lista);
     }
 
     @GetMapping("/monumento/{id}")
@@ -30,28 +29,29 @@ public class MonumentoController {
 
     @PostMapping("/monumento/")
     public ResponseEntity<Monumento> create(@RequestBody Monumento monumento){
-        Monumento nuevo = monumentoRepository.save(monumento);
-        return ResponseEntity.status(201).body(nuevo);
+        Monumento monumentoNuevo = monumentoRepository.save(monumento);
+        return ResponseEntity.status(201).body(monumentoNuevo);
     }
 
-    /*
-    @PutMapping("/monumento/{id}")
-    public ResponseEntity<Monumento> edit(@RequestBody Monumento monumento, @PathVariable Long id){
+    @PutMapping
+    public ResponseEntity<Monumento> edit (@RequestBody Monumento monumento, @PathVariable Long id){
         return ResponseEntity.of(monumentoRepository.findById(id)
-                .map(antiguo -> {
-                    antiguo.setDescripcion(monumento.getDesc);
-                        }
-
-                )
-
-        );
+                .map(encontrado -> {
+                    encontrado.setDescripcion(monumento.getDescripcion());
+                    encontrado.setLatitud(monumento.getLatitud());
+                    encontrado.setLongitud(monumento.getLongitud());
+                    encontrado.setNombre(monumento.getNombre());
+                    encontrado.setCodPais(monumento.getCodPais());
+                    encontrado.setImgURL(monumento.getImgURL());
+                    encontrado.setNombreCiudad(monumento.getNombreCiudad());
+                    return monumentoRepository.save(encontrado);
+                }));
     }
-     */
 
     @DeleteMapping("/monumento/{id}")
     public ResponseEntity<?> delete(@RequestBody Monumento monumento, @PathVariable Long id){
         if(monumentoRepository.existsById(id))
-            monumentoRepository.delete(monumento);
+            monumentoRepository.deleteById(id);
 
         return ResponseEntity.noContent().build();
     }
