@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "cdef64d0-983c-4bd2-af8f-ec58e05fdc43",
+		"name": "Ejercicio API REST Monumentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30052645"
+	},
+	"item": [
+		{
+			"name": "Delete Monumento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE.URL}}/alumno/1",
+					"host": [
+						"{{BASE.URL}}"
+					],
+					"path": [
+						"alumno",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE.URL}}/alumno/",
+					"host": [
+						"{{BASE.URL}}"
+					],
+					"path": [
+						"alumno",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE.URL}}/alumno/1",
+					"host": [
+						"{{BASE.URL}}"
+					],
+					"path": [
+						"alumno",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Monumento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{BASE.URL}}/alumno/1",
+					"host": [
+						"{{BASE.URL}}"
+					],
+					"path": [
+						"alumno",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Monumento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\" : \"Plaza España\",\r\n    \"codPais\" : \"2312XXA\",\r\n    \"nombrePais\" : \"España\",\r\n    \"nombreCiudad\" : \"Sevilla\",\r\n    \"descripcion\" : \"Plaza grande\",\r\n    \"imgURL\" : \"img.com\",\r\n    \"latitud\" : 220,\r\n    \"longitud\" : 302\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE.URL}}/monumento/",
+					"host": [
+						"{{BASE.URL}}"
+					],
+					"path": [
+						"monumento",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE.URL",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}

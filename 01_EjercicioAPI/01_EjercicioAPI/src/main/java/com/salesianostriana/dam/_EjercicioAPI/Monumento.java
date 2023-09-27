@@ -1,4 +1,4 @@
-package com.salesianostriana.dam._EjemploApiRest;
+package com.salesianostriana.dam._EjercicioAPI;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,15 +10,16 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class Alumno {
+@AllArgsConstructor
+@Builder
+public class Monumento {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
-    private String nombre, apellidos, email;
-    private int edad;
+    private String nombre, codPais, nombrePais, nombreCiudad, descripcion, imgURL;
+    private int latitud, longitud;
+
 }
