@@ -6,7 +6,6 @@ import com.salesianostriana.dam._EjemploDTO.model.Monumento;
 import com.salesianostriana.dam._EjemploDTO.model.Ruta;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

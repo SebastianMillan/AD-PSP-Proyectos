@@ -1,13 +1,13 @@
 package com.salesianostriana.dam._EjemploDTO.controller;
 
+import com.salesianostriana.dam._EjemploDTO.dto.EditRutaDto;
 import com.salesianostriana.dam._EjemploDTO.dto.GetRutaDTO;
 import com.salesianostriana.dam._EjemploDTO.model.Ruta;
 import com.salesianostriana.dam._EjemploDTO.repository.RutaRepository;
+import com.salesianostriana.dam._EjemploDTO.service.RutaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +17,7 @@ import java.util.List;
 public class RutaController {
 
     private final RutaRepository rutaRepository;
+    private final RutaService rutaService;
 
     @GetMapping("/")
     public ResponseEntity<List<GetRutaDTO>> getAll(){
@@ -33,5 +34,10 @@ public class RutaController {
                         .toList()
         );
 
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<GetRutaDTO> createRuta(@RequestBody EditRutaDto nuevo){
+        return ResponseEntity.status(201).body(GetRutaDTO.of(rutaService.save(nuevo)));
     }
 }
