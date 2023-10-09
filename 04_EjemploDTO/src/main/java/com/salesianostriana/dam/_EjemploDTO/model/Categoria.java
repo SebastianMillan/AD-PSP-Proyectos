@@ -20,4 +20,5 @@ public class Categoria {
     @GeneratedValue
     private Long id;
     private String nombre;
+
 }
