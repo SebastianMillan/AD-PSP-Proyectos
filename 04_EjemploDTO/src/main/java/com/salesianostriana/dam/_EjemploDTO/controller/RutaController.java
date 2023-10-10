@@ -36,6 +36,12 @@ public class RutaController {
 
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<GetRutaDTO> findById(@PathVariable Long id){
+        return ResponseEntity.of(rutaRepository.findById(id)
+                .map(GetRutaDTO::of));
+    }
+
     @PostMapping("/")
     public ResponseEntity<GetRutaDTO> createRuta(@RequestBody EditRutaDto nuevo){
         return ResponseEntity.status(201).body(GetRutaDTO.of(rutaService.save(nuevo)));
