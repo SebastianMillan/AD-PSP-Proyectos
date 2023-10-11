@@ -25,6 +25,5 @@ public class OpenApiConfig {
                 .externalDocs(new ExternalDocumentation()
                         .description("Wiki Docs Fernando")
                         .url("https://example.com/wiki"));
-        )
     }
 }
