@@ -26,7 +26,7 @@ public class Book {
     private Author author;
 
     //helper
-
+    /*
     public void addAuthor(Author a){
         this.author=a;
         a.getLibros().add(this);
@@ -36,4 +36,5 @@ public class Book {
         a.getLibros().remove(this);
         this.author=null;
     }
+     */
 }
