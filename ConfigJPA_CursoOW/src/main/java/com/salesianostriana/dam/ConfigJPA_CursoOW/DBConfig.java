@@ -27,7 +27,7 @@ public class DBConfig {
         props.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
         props.put("hibernate.session.events.log.LOG_QUERIES_SLOWER_THAN_MS","1");
 
-
+        return builder.build();
     }
 
     @Bean
