@@ -10,7 +10,6 @@ import java.util.Objects;
 @Entity
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @RequiredArgsConstructor
@@ -27,7 +26,7 @@ public class CursoOnline {
     @ManyToOne
     private Profesor profesor;
 
-    @OneToMany(mappedBy = "curso")
+    @OneToMany(mappedBy = "curso", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     @Builder.Default
     private List<Video> videos = new ArrayList<>();

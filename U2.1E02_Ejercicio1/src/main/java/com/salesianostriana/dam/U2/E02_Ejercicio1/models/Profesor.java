@@ -1,9 +1,6 @@
 package com.salesianostriana.dam.U2.E02_Ejercicio1.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -13,7 +10,6 @@ import java.util.Objects;
 @Entity
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @RequiredArgsConstructor
@@ -30,7 +26,7 @@ public class Profesor {
 
     @ToString.Exclude
     @Builder.Default
-    @OneToMany(mappedBy = "profesor")
+    @OneToMany(mappedBy = "profesor", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CursoOnline> cursos = new ArrayList<>();
 
     @Override
