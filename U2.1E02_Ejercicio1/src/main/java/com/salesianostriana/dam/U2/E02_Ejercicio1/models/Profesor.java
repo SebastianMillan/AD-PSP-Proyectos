@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,8 +29,9 @@ public class Profesor {
     private double puntuacion;
 
     @ToString.Exclude
+    @Builder.Default
     @OneToMany(mappedBy = "profesor")
-    private List<CursoOnline> cursos;
+    private List<CursoOnline> cursos = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {

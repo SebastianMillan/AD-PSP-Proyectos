@@ -3,6 +3,7 @@ package com.salesianostriana.dam.U2.E02_Ejercicio1.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,7 +29,8 @@ public class CursoOnline {
 
     @OneToMany(mappedBy = "curso")
     @ToString.Exclude
-    private List<Video> videos;
+    @Builder.Default
+    private List<Video> videos = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
