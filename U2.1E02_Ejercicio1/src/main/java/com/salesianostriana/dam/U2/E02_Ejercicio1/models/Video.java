@@ -5,8 +5,8 @@ import lombok.*;
 
 import java.util.Objects;
 
-@Entity
 @Builder
+@Entity
 @AllArgsConstructor
 @Getter
 @Setter
@@ -17,10 +17,9 @@ import java.util.Objects;
 public class Video {
 
     @Id
-    @GeneratedValue
-    private long id;
+    private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @Id
     private CursoOnline curso;
 
@@ -40,16 +39,6 @@ public class Video {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    public void addCurso(CursoOnline c){
-        this.curso=c;
-        c.getVideos().add(this);
-    }
-
-    public void removeCurso(CursoOnline c){
-        this.curso=null;
-        c.getVideos().remove(this);
     }
 
     public VideoPK getId() {

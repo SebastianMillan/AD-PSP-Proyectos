@@ -14,7 +14,6 @@ import java.util.List;
 public class InitData {
 
     private final CursoOnlineRepository cursoOnlineRepository;
-    private final VideoRepository videoRepository;
     private final ProfesorRepository profesorRepository;
 
     @PostConstruct
@@ -76,12 +75,13 @@ public class InitData {
                 .url("https://start.spring.io/")
                 .build();
 
-        v1.addCurso(c1);
-        v2.addCurso(c1);
-        v3.addCurso(c2);
-        v4.addCurso(c2);
+        c1.addVideo(v1);
+        c1.addVideo(v2);
+        c2.addVideo(v3);
+        c2.addVideo(v4);
 
-        videoRepository.saveAll(List.of(v1,v2,v3,v4));
+        cursoOnlineRepository.saveAll(List.of(c1,c2));
+
 
 
 

@@ -26,7 +26,7 @@ public class CursoOnline {
     @ManyToOne
     private Profesor profesor;
 
-    @OneToMany(mappedBy = "curso", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     @Builder.Default
     private List<Video> videos = new ArrayList<>();
@@ -51,5 +51,17 @@ public class CursoOnline {
     public void removeProfesor(Profesor p){
         this.profesor=null;
         p.getCursos().remove(this);
+    }
+
+
+    public void addVideo(Video v){
+        this.getVideos().add(v);
+        v.setCurso(this);
+    }
+
+    public void removeVideo(Video v){
+        this.getVideos().remove(v);
+        v.setCurso(null);
+
     }
 }
