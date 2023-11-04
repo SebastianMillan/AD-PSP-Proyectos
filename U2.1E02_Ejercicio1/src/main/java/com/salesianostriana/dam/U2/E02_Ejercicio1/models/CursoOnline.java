@@ -18,7 +18,7 @@ public class CursoOnline {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long idCurso;
 
     private String nombre;
     private double puntuacion;
@@ -26,7 +26,7 @@ public class CursoOnline {
     @ManyToOne
     private Profesor profesor;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "videoPK.cursoOnline",fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     @Builder.Default
     private List<Video> videos = new ArrayList<>();
@@ -36,12 +36,12 @@ public class CursoOnline {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CursoOnline that = (CursoOnline) o;
-        return id == that.id;
+        return idCurso == that.idCurso;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(idCurso);
     }
 
     public void addProfesor(Profesor p){
@@ -56,12 +56,12 @@ public class CursoOnline {
 
     public void addVideo(Video v){
         this.getVideos().add(v);
-        v.setCurso(this);
+        v.getVideoPK().setCursoOnline(this);
     }
 
     public void removeVideo(Video v){
         this.getVideos().remove(v);
-        v.setCurso(null);
-
+        v.getVideoPK().setCursoOnline(null);
     }
+
 }

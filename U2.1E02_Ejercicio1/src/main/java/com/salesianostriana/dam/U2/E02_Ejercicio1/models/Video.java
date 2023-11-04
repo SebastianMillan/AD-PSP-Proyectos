@@ -3,25 +3,21 @@ package com.salesianostriana.dam.U2.E02_Ejercicio1.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-@Builder
 @Entity
 @AllArgsConstructor
 @Getter
+@Builder
 @Setter
 @RequiredArgsConstructor
 @ToString
-@IdClass(VideoPK.class)
 //@EqualsAndHashCode
-public class Video {
+public class Video implements Serializable {
 
-    @Id
-    private Long id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @Id
-    private CursoOnline curso;
+    @EmbeddedId
+    private VideoPK videoPK;
 
     private int orden;
     private String titulo;
@@ -33,20 +29,11 @@ public class Video {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Video video = (Video) o;
-        return id == video.id;
+        return Objects.equals(videoPK, video.videoPK);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    public VideoPK getId() {
-        return new VideoPK(curso, id);
-    }
-
-    public void setId(VideoPK videoPK) {
-        this.curso= videoPK.getCursoOnline();
-        this.id= videoPK.getId();
+        return Objects.hash(videoPK);
     }
 }
