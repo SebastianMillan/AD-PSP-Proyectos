@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dfe3523-8ad8-4c95-af4e-ee18b1eae97d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../U2.1E02_Ejercicio1/src/main/java/com/salesianostriana/dam/U2/E02_Ejercicio1/models/CursoOnline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../U2.1E02_Ejercicio1/src/main/java/com/salesianostriana/dam/U2/E02_Ejercicio1/models/Profesor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../U2.1E02_Ejercicio1/src/main/java/com/salesianostriana/dam/U2/E02_Ejercicio1/models/Video.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../U2.1E02_Ejercicio1/src/main/java/com/salesianostriana/dam/U2/E02_Ejercicio1/repositories/CursoOnlineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../U2.1E02_Ejercicio1/src/main/java/com/salesianostriana/dam/U2/E02_Ejercicio1/repositories/InitData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../U2.1E02_Ejercicio1/src/main/java/com/salesianostriana/dam/U2/E02_Ejercicio1/repositories/ProfesorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../U2.1E02_Ejercicio1/src/main/java/com/salesianostriana/dam/U2/E02_Ejercicio1/repositories/VideoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/cascaderphan/Author.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/cascaderphan/AuthorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/cascaderphan/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/cascaderphan/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/cascaderphan/InitData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/sqldelete/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/sqldelete/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BorradoEntidades_CursoOW/src/main/java/com/salesianostriana/dam/BorradoEntidades_CursoOW/sqldelete/InitData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/millan.orseb23_trian/Desktop/Sebastián Millán Ordóñez/AD-PSP/Proyectos/EjercicioRepasoEntidades_ModeloDatos"
+    "last_opened_file_path": "D:/2ºDAM/AD-PSP/AD-PSP-Proyectos/EjercicioRepasoEntidades_ModeloDatos"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
