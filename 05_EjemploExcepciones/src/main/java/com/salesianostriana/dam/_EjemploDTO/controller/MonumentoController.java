@@ -4,6 +4,7 @@ import com.salesianostriana.dam._EjemploDTO.dto.GetMonumentoDTO;
 import com.salesianostriana.dam._EjemploDTO.exception.MonumentoNotFoundException;
 import com.salesianostriana.dam._EjemploDTO.model.Monumento;
 import com.salesianostriana.dam._EjemploDTO.repository.MonumentoRepository;
+import com.salesianostriana.dam._EjemploDTO.service.MonumentoServicio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +16,11 @@ import java.util.List;
 @RequestMapping("/monumento")
 public class MonumentoController {
 
-    private final MonumentoRepository monumentoRepository;
+    private final MonumentoServicio monumentoServicio;
 
     @GetMapping("/{id}")
-    public ResponseEntity<GetMonumentoDTO> findByID(@PathVariable Long id){
-        return monumentoRepository.findById(id)
-                .map(GetMonumentoDTO::of)
-                .map(ResponseEntity::ok)
-                .orElseThrow(()-> new MonumentoNotFoundException(id));
+    public GetMonumentoDTO findByID(@PathVariable Long id){
+        return GetMonumentoDTO.of(monumentoServicio.findById(id));
     }
 
 
