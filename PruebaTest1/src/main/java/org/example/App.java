@@ -8,9 +8,10 @@ public class App {
     public static void main(String[] args) {
 
         HashSet<Integer> hs = new HashSet<>();
-
+        List<Integer> c = null;
         hs.addAll(List.of(1,2,3,4,5));
         System.out.println(hs);
+        hs.removeAll(c);
     }
     
 }
