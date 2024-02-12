@@ -3,15 +3,15 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
 
-        if (args.length != 2) {
+        /*if (args.length != 2) {
             System.err.println("Error de sintaxis. Se necesitan dos argumentos");
             return;
-        }
+        }*/
         final int TAM = 1024 * 16;
 
         try (
                 BufferedInputStream bin=new BufferedInputStream(new FileInputStream("openwebinars.jpg"));
-                BufferedOutputStream bout =new BufferedOutputStream(new FileOutputStream("openwebinars.jpg"))
+                BufferedOutputStream bout =new BufferedOutputStream(new FileOutputStream("image_copy.jpg"))
         ){
             int cantidadBytes = 0;
             byte[] buffer = new byte[TAM];
